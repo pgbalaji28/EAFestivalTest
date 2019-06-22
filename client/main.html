@@ -1,0 +1,32 @@
+<head>
+  <title>Music Festival</title>
+</head>
+
+<body>
+  <h2> Festival Data</h2>
+  {{> festival}}
+
+</body>
+
+<template name="festival">
+  {{#if recordLabelList}}
+  {{#each recordLabelList}}
+  <ul>
+    <b>{{recordLabel}}</b>
+    {{#each bands}}
+    <li>
+      {{band}}
+      <ul>
+        <li>
+          {{festival}}
+        </li>
+      </ul>
+    </li>
+    {{/each}}
+  </ul>
+  {{/each}}
+
+  {{else}}
+  <p> No data - Try reloading the page</p>
+  {{/if}}
+</template>
